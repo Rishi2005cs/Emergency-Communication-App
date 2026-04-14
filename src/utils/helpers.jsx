@@ -1,8 +1,9 @@
+// ── Stop TTS ──────────────────────────────────────────────────
 export function stopSpeaking() {
   if ('speechSynthesis' in window) window.speechSynthesis.cancel()
 }
  
-// Geolocation
+// ── Geolocation ───────────────────────────────────────────────
 export function getLocation() {
   return new Promise((resolve, reject) => {
     if (!navigator.geolocation) { reject(new Error('Geolocation not supported')); return }
@@ -18,12 +19,35 @@ export function buildMapsLink(lat, lng) {
   return `https://maps.google.com/?q=${lat},${lng}`
 }
  
-// Vibration
+// Returns a Google Maps search URL for nearest hospital/police
+export function buildNearestSearch(type, lat, lng) {
+  const query = type === 'medical' ? 'ambulance+hospital+near+me' : 'police+station+near+me'
+  if (lat && lng) {
+    return `https://www.google.com/maps/search/${query}/@${lat},${lng},14z`
+  }
+  return `https://www.google.com/maps/search/${query}`
+}
+ 
+// India emergency numbers (fallback numbers for other countries too)
+export const EMERGENCY_NUMBERS = {
+  medical: {
+    primary: '112',       // National Emergency (India)
+    ambulance: '108',     // Ambulance (India)
+    label: 'Ambulance',
+  },
+  police: {
+    primary: '112',       // National Emergency (India)
+    police: '100',        // Police (India)
+    label: 'Police',
+  },
+}
+ 
+// ── Vibration ─────────────────────────────────────────────────
 export function vibrate(pattern = [200, 100, 200, 100, 400]) {
   if ('vibrate' in navigator) navigator.vibrate(pattern)
 }
  
-// Flash screen
+// ── Screen Flash ──────────────────────────────────────────────
 export function flashScreen(times = 3) {
   let count = 0
   const overlay = document.createElement('div')
@@ -36,18 +60,4 @@ export function flashScreen(times = 3) {
     setTimeout(flash, 150)
   }
   flash()
-}
- 
-// Speech recognition
-export function startListening(onResult, onEnd) {
-  const SR = window.SpeechRecognition || window.webkitSpeechRecognition
-  if (!SR) return null
-  const recognition = new SR()
-  recognition.continuous = false
-  recognition.interimResults = false
-  recognition.lang = 'en-US'
-  recognition.onresult = (e) => onResult(e.results[0][0].transcript)
-  recognition.onend = onEnd
-  recognition.start()
-  return recognition
 }

@@ -181,3 +181,4 @@ All data stays on your device. No servers, no tracking, no data collection.
 ---
  
 Made with ❤️ for real-world safety.
+

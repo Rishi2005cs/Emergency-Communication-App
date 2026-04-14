@@ -1,0 +1,329 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: fadeUp 0.4s ease both;
+}
+ 
+.pageHeader { margin-bottom: 4px; }
+ 
+.pageTitle {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+ 
+.pageDesc {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+ 
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+ 
+.cardTitle {
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+ 
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+ 
+.formActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+ 
+.primaryBtn {
+  flex: 1;
+  padding: 14px 20px;
+  background: var(--red);
+  color: #fff;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: opacity 0.2s, transform 0.15s;
+}
+ 
+.primaryBtn:hover { opacity: 0.85; transform: translateY(-1px); }
+ 
+.cancelBtn {
+  padding: 14px 20px;
+  background: var(--surface2);
+  color: var(--text-dim);
+  border-radius: 12px;
+  font-size: 0.95rem;
+}
+ 
+.outlineBtn {
+  padding: 12px 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+ 
+.outlineBtn:hover { background: var(--surface2); }
+ 
+.dangerBtn {
+  width: 100%;
+  padding: 14px;
+  background: rgba(255,45,45,0.1);
+  border: 1px solid rgba(255,45,45,0.25);
+  border-radius: 12px;
+  color: var(--red);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+ 
+.settingRow label {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.settingVal {
+  float: right;
+  font-weight: 600;
+  color: var(--red);
+}
+
+.range {
+  width: 100%;
+  margin-top: 10px;
+  -webkit-appearance: none;
+  background: var(--surface2);
+  height: 6px;
+  border-radius: 3px;
+  outline: none;
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--red);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 4px solid var(--surface);
+  box-shadow: 0 0 10px var(--red-glow);
+}
+
+.select, .input {
+  width: 100%;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+  margin-top: 4px;
+}
+
+.select:focus, .input:focus {
+  border-color: var(--red);
+}
+
+.empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+ 
+.empty p:first-child { font-size: 2.5rem; }
+ 
+/* Contact card */
+.contactCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+ 
+.contactAvatar {
+  width: 44px;
+  height: 44px;
+  background: var(--red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+ 
+.contactInfo { flex: 1; min-width: 0; }
+.contactName { font-weight: 600; font-size: 1rem; }
+.contactSub { font-size: 0.8rem; color: var(--text-dim); margin-top: 2px; }
+ 
+.contactActions { display: flex; gap: 4px; }
+ 
+.iconBtn {
+  width: 36px;
+  height: 36px;
+  background: var(--surface2);
+  border-radius: 10px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+ 
+.iconBtn:hover { background: rgba(255,255,255,0.1); }
+ 
+/* Section */
+.section { display: flex; flex-direction: column; gap: 8px; }
+ 
+.sectionTitle {
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+ 
+/* Phrase rows */
+.phraseRow {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+ 
+.phraseRowIcon { font-size: 1.4rem; flex-shrink: 0; }
+.phraseRowText { flex: 1; font-size: 0.9rem; line-height: 1.4; }
+ 
+/* Icon picker */
+.iconPicker { display: flex; flex-wrap: wrap; gap: 8px; }
+ 
+.iconOpt {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--surface2);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  transition: border 0.2s;
+}
+ 
+.iconSelected { border-color: var(--red); }
+ 
+/* History */
+.historyCard {
+  background: var(--surface);
+  border: 1px solid;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+ 
+.historyHeader { display: flex; align-items: center; gap: 12px; }
+.historyIcon { font-size: 1.6rem; }
+.historyLabel { font-weight: 700; font-size: 1rem; }
+.historyTime { font-size: 0.78rem; color: var(--text-dim); margin-top: 2px; }
+.historyMsg { font-size: 0.9rem; color: var(--text-dim); line-height: 1.5; }
+.historyMap { font-size: 0.85rem; color: var(--green); }
+ 
+/* Settings */
+.settingRow {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+ 
+.settingRow label {
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+}
+ 
+.settingVal { color: var(--red); font-weight: 600; }
+ 
+.range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background: var(--surface2);
+  border-radius: 2px;
+  outline: none;
+}
+ 
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--red);
+  border-radius: 50%;
+  cursor: pointer;
+}
+ 
+.toggleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--border);
+}
+ 
+.toggleRow:last-child { border-bottom: none; }
+ 
+.toggle {
+  width: 48px;
+  height: 26px;
+  background: var(--surface2);
+  border-radius: 13px;
+  position: relative;
+  transition: background 0.2s;
+  border: 1px solid var(--border);
+}
+ 
+.toggleOn { background: var(--red); border-color: var(--red); }
+ 
+.toggleThumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+ 
+.toggleOn .toggleThumb { transform: translateX(22px); }

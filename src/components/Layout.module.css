@@ -1,0 +1,90 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 480px;
+  margin: 0 auto;
+}
+ 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+ 
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  color: var(--text);
+}
+ 
+.logo span {
+  color: var(--red);
+}
+ 
+.badge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--red);
+  background: rgba(255,45,45,0.12);
+  border: 1px solid rgba(255,45,45,0.25);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+ 
+.main {
+  flex: 1;
+  padding: 20px 16px;
+  padding-bottom: 100px;
+  overflow-y: auto;
+}
+ 
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 8px 0 max(8px, env(safe-area-inset-bottom));
+  z-index: 100;
+}
+ 
+.navItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 6px 0;
+  opacity: 0.4;
+  transition: opacity 0.2s;
+}
+ 
+.navItem.active {
+  opacity: 1;
+}
+ 
+.navIcon { font-size: 1.3rem; }
+ 
+.navLabel {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+ 
+.navItem.active .navLabel {
+  color: var(--red);
+}
